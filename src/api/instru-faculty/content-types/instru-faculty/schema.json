@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instru_faculties",
+  "info": {
+    "singularName": "instru-faculty",
+    "pluralName": "instru-faculties",
+    "displayName": "instru-faculty",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

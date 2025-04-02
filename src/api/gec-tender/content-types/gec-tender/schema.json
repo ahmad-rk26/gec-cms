@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gec_tenders",
+  "info": {
+    "singularName": "gec-tender",
+    "pluralName": "gec-tenders",
+    "displayName": "gec_tender",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "circular": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tender_date": {
+      "type": "date"
+    }
+  }
+}

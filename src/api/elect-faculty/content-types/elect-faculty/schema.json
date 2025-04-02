@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "elect_faculties",
+  "info": {
+    "singularName": "elect-faculty",
+    "pluralName": "elect-faculties",
+    "displayName": "elect-faculty",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "designation": {
+      "type": "string"
+    }
+  }
+}

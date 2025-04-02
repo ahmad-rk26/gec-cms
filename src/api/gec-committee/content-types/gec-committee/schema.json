@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gec_committees",
+  "info": {
+    "singularName": "gec-committee",
+    "pluralName": "gec-committees",
+    "displayName": "gec_committee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "committee_name": {
+      "type": "string"
+    },
+    "committee_date": {
+      "type": "date"
+    },
+    "official_circular": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "committee_incharge": {
+      "type": "string"
+    }
+  }
+}
