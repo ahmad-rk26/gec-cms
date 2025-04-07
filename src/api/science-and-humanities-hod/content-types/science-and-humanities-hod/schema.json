@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "entc_hods",
+  "collectionName": "science_and_humanities_hods",
   "info": {
-    "singularName": "entc-hod",
-    "pluralName": "entc-hods",
-    "displayName": "entc_hod",
+    "singularName": "science-and-humanities-hod",
+    "pluralName": "science-and-humanities-hods",
+    "displayName": "science_&_humanities_hod",
     "description": ""
   },
   "options": {
@@ -14,11 +14,14 @@
     "name": {
       "type": "string"
     },
-    "contact": {
+    "qualification": {
       "type": "string"
     },
-    "education": {
+    "experience": {
       "type": "string"
+    },
+    "details": {
+      "type": "text"
     },
     "email": {
       "type": "email"
@@ -35,19 +38,18 @@
       ]
     },
     "attachment": {
-      "type": "text"
-    },
-    "qualification": {
-      "type": "string"
-    },
-    "experience": {
-      "type": "string"
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "designation": {
       "type": "string"
-    },
-    "details": {
-      "type": "text"
     }
   }
 }

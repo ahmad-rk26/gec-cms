@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "science_and_humanities_visiting_faculties",
+  "info": {
+    "singularName": "science-and-humanities-visiting-faculty",
+    "pluralName": "science-and-humanities-visiting-faculties",
+    "displayName": "science-and-humanities-visiting-faculty"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
