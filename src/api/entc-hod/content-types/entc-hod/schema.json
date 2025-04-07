@@ -33,6 +33,9 @@
         "videos",
         "audios"
       ]
+    },
+    "attachment": {
+      "type": "text"
     }
   }
 }
