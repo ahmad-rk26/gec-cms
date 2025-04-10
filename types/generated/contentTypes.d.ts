@@ -435,6 +435,45 @@ export interface ApiAbhirangPhotoAbhirangPhoto
   };
 }
 
+export interface ApiCivilFacultyCivilFaculty
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'civil_faculties';
+  info: {
+    description: '';
+    displayName: 'civil-faculty';
+    pluralName: 'civil-faculties';
+    singularName: 'civil-faculty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    details: Schema.Attribute.Text;
+    email: Schema.Attribute.Email;
+    experience: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::civil-faculty.civil-faculty'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCivilHodCivilHod extends Struct.SingleTypeSchema {
   collectionName: 'civil_hods';
   info: {
@@ -447,12 +486,18 @@ export interface ApiCivilHodCivilHod extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     contact: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    details: Schema.Attribute.Text;
     education: Schema.Attribute.String;
     email: Schema.Attribute.Email;
+    experience: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -461,6 +506,77 @@ export interface ApiCivilHodCivilHod extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCivilNonTeachingFacultyCivilNonTeachingFaculty
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'civil_non_teaching_faculties';
+  info: {
+    displayName: 'civil-non-teaching-faculty';
+    pluralName: 'civil-non-teaching-faculties';
+    singularName: 'civil-non-teaching-faculty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    email: Schema.Attribute.Email;
+    experience: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::civil-non-teaching-faculty.civil-non-teaching-faculty'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCivilVisitingFacultyCivilVisitingFaculty
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'civil_visiting_faculties';
+  info: {
+    displayName: 'civil-visiting-faculty';
+    pluralName: 'civil-visiting-faculties';
+    singularName: 'civil-visiting-faculty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::civil-visiting-faculty.civil-visiting-faculty'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -480,6 +596,9 @@ export interface ApiCseFacultyCseFaculty extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -515,6 +634,9 @@ export interface ApiCseHodCseHod extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     contact: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -552,6 +674,9 @@ export interface ApiCseNonTeachingFacultyCseNonTeachingFaculty
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -589,6 +714,9 @@ export interface ApiCseVisitingFacultyCseVisitingFaculty
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -620,6 +748,9 @@ export interface ApiElectFacultyElectFaculty
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -656,6 +787,9 @@ export interface ApiElectNonTeachingFacultyElectNonTeachingFaculty
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -693,6 +827,9 @@ export interface ApiElectVisitingFacultyElectVisitingFaculty
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -723,6 +860,9 @@ export interface ApiElectricalHodElectricalHod extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     contact: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -782,6 +922,43 @@ export interface ApiEmployerFeedbackEmployerFeedback
   };
 }
 
+export interface ApiEntcFacultyEntcFaculty extends Struct.CollectionTypeSchema {
+  collectionName: 'entc_faculties';
+  info: {
+    displayName: 'entc-faculty';
+    pluralName: 'entc-faculties';
+    singularName: 'entc-faculty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    details: Schema.Attribute.Text;
+    email: Schema.Attribute.Email;
+    experience: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::entc-faculty.entc-faculty'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEntcHodEntcHod extends Struct.SingleTypeSchema {
   collectionName: 'entc_hods';
   info: {
@@ -794,12 +971,16 @@ export interface ApiEntcHodEntcHod extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Text;
     contact: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    details: Schema.Attribute.Text;
     education: Schema.Attribute.String;
     email: Schema.Attribute.Email;
+    experience: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -808,6 +989,77 @@ export interface ApiEntcHodEntcHod extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEntcNonTeachingFacultyEntcNonTeachingFaculty
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'entc_non_teaching_faculties';
+  info: {
+    displayName: 'entc-non-teaching-faculty';
+    pluralName: 'entc-non-teaching-faculties';
+    singularName: 'entc-non-teaching-faculty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    email: Schema.Attribute.Email;
+    experience: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::entc-non-teaching-faculty.entc-non-teaching-faculty'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEntcVisitingFacultyEntcVisitingFaculty
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'entc_visiting_faculties';
+  info: {
+    displayName: 'entc-visiting-faculty';
+    pluralName: 'entc-visiting-faculties';
+    singularName: 'entc-visiting-faculty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::entc-visiting-faculty.entc-visiting-faculty'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1223,6 +1475,9 @@ export interface ApiInstruFacultyInstruFaculty
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1259,6 +1514,9 @@ export interface ApiInstruNonTeachingFacultyInstruNonTeachingFaculty
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1296,6 +1554,9 @@ export interface ApiInstruVisitingFacultyInstruVisitingFaculty
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1327,6 +1588,9 @@ export interface ApiInstrumentationHodInstrumentationHod
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     contact: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1395,6 +1659,9 @@ export interface ApiMechFacultyMechFaculty extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1431,6 +1698,9 @@ export interface ApiMechNonTeachingFacultyMechNonTeachingFaculty
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1468,6 +1738,9 @@ export interface ApiMechVisitingFacultyMechVisitingFaculty
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1498,6 +1771,9 @@ export interface ApiMechanicalHodMechanicalHod extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     contact: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1552,6 +1828,153 @@ export interface ApiPlacementRecordPlacementRecord
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     year: Schema.Attribute.String;
+  };
+}
+
+export interface ApiScienceAndHumanitiesFacultyScienceAndHumanitiesFaculty
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'science_and_humanities_faculties';
+  info: {
+    displayName: 'science-and-humanities-faculty';
+    pluralName: 'science-and-humanities-faculties';
+    singularName: 'science-and-humanities-faculty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    details: Schema.Attribute.Text;
+    email: Schema.Attribute.Email;
+    experience: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::science-and-humanities-faculty.science-and-humanities-faculty'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiScienceAndHumanitiesHodScienceAndHumanitiesHod
+  extends Struct.SingleTypeSchema {
+  collectionName: 'science_and_humanities_hods';
+  info: {
+    description: '';
+    displayName: 'science_&_humanities_hod';
+    pluralName: 'science-and-humanities-hods';
+    singularName: 'science-and-humanities-hod';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    details: Schema.Attribute.Text;
+    email: Schema.Attribute.Email;
+    experience: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::science-and-humanities-hod.science-and-humanities-hod'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiScienceAndHumanitiesNonTeachingFacultyScienceAndHumanitiesNonTeachingFaculty
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'science_and_humanities_non_teaching_faculties';
+  info: {
+    displayName: 'science-and-humanities-non-teaching-faculty';
+    pluralName: 'science-and-humanities-non-teaching-faculties';
+    singularName: 'science-and-humanities-non-teaching-faculty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    email: Schema.Attribute.Email;
+    experience: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::science-and-humanities-non-teaching-faculty.science-and-humanities-non-teaching-faculty'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiScienceAndHumanitiesVisitingFacultyScienceAndHumanitiesVisitingFaculty
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'science_and_humanities_visiting_faculties';
+  info: {
+    displayName: 'science-and-humanities-visiting-faculty';
+    pluralName: 'science-and-humanities-visiting-faculties';
+    singularName: 'science-and-humanities-visiting-faculty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::science-and-humanities-visiting-faculty.science-and-humanities-visiting-faculty'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -2614,7 +3037,10 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::abhirang-banner.abhirang-banner': ApiAbhirangBannerAbhirangBanner;
       'api::abhirang-photo.abhirang-photo': ApiAbhirangPhotoAbhirangPhoto;
+      'api::civil-faculty.civil-faculty': ApiCivilFacultyCivilFaculty;
       'api::civil-hod.civil-hod': ApiCivilHodCivilHod;
+      'api::civil-non-teaching-faculty.civil-non-teaching-faculty': ApiCivilNonTeachingFacultyCivilNonTeachingFaculty;
+      'api::civil-visiting-faculty.civil-visiting-faculty': ApiCivilVisitingFacultyCivilVisitingFaculty;
       'api::cse-faculty.cse-faculty': ApiCseFacultyCseFaculty;
       'api::cse-hod.cse-hod': ApiCseHodCseHod;
       'api::cse-non-teaching-faculty.cse-non-teaching-faculty': ApiCseNonTeachingFacultyCseNonTeachingFaculty;
@@ -2624,7 +3050,10 @@ declare module '@strapi/strapi' {
       'api::elect-visiting-faculty.elect-visiting-faculty': ApiElectVisitingFacultyElectVisitingFaculty;
       'api::electrical-hod.electrical-hod': ApiElectricalHodElectricalHod;
       'api::employer-feedback.employer-feedback': ApiEmployerFeedbackEmployerFeedback;
+      'api::entc-faculty.entc-faculty': ApiEntcFacultyEntcFaculty;
       'api::entc-hod.entc-hod': ApiEntcHodEntcHod;
+      'api::entc-non-teaching-faculty.entc-non-teaching-faculty': ApiEntcNonTeachingFacultyEntcNonTeachingFaculty;
+      'api::entc-visiting-faculty.entc-visiting-faculty': ApiEntcVisitingFacultyEntcVisitingFaculty;
       'api::gcoec-event.gcoec-event': ApiGcoecEventGcoecEvent;
       'api::gcoec-new.gcoec-new': ApiGcoecNewGcoecNew;
       'api::gec-announcement-bar.gec-announcement-bar': ApiGecAnnouncementBarGecAnnouncementBar;
@@ -2647,6 +3076,10 @@ declare module '@strapi/strapi' {
       'api::mech-visiting-faculty.mech-visiting-faculty': ApiMechVisitingFacultyMechVisitingFaculty;
       'api::mechanical-hod.mechanical-hod': ApiMechanicalHodMechanicalHod;
       'api::placement-record.placement-record': ApiPlacementRecordPlacementRecord;
+      'api::science-and-humanities-faculty.science-and-humanities-faculty': ApiScienceAndHumanitiesFacultyScienceAndHumanitiesFaculty;
+      'api::science-and-humanities-hod.science-and-humanities-hod': ApiScienceAndHumanitiesHodScienceAndHumanitiesHod;
+      'api::science-and-humanities-non-teaching-faculty.science-and-humanities-non-teaching-faculty': ApiScienceAndHumanitiesNonTeachingFacultyScienceAndHumanitiesNonTeachingFaculty;
+      'api::science-and-humanities-visiting-faculty.science-and-humanities-visiting-faculty': ApiScienceAndHumanitiesVisitingFacultyScienceAndHumanitiesVisitingFaculty;
       'api::student-section.student-section': ApiStudentSectionStudentSection;
       'api::techno-banner.techno-banner': ApiTechnoBannerTechnoBanner;
       'api::technoutsav-photo.technoutsav-photo': ApiTechnoutsavPhotoTechnoutsavPhoto;

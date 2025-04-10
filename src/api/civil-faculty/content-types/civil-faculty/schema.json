@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "civil_faculties",
+  "info": {
+    "singularName": "civil-faculty",
+    "pluralName": "civil-faculties",
+    "displayName": "civil-faculty",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

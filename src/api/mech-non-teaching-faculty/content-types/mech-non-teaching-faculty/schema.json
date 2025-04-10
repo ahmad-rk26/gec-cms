@@ -35,6 +35,16 @@
       ],
       "type": "media",
       "multiple": true
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

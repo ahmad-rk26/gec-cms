@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "entc_non_teaching_faculties",
+  "info": {
+    "singularName": "entc-non-teaching-faculty",
+    "pluralName": "entc-non-teaching-faculties",
+    "displayName": "entc-non-teaching-faculty"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

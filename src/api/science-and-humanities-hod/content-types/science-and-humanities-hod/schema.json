@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "science_and_humanities_hods",
+  "info": {
+    "singularName": "science-and-humanities-hod",
+    "pluralName": "science-and-humanities-hods",
+    "displayName": "science_&_humanities_hod",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "designation": {
+      "type": "string"
+    }
+  }
+}

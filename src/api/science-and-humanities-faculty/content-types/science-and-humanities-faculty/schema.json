@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "science_and_humanities_faculties",
+  "info": {
+    "singularName": "science-and-humanities-faculty",
+    "pluralName": "science-and-humanities-faculties",
+    "displayName": "science-and-humanities-faculty"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

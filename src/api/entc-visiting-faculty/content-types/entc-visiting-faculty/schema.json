@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "entc_visiting_faculties",
+  "info": {
+    "singularName": "entc-visiting-faculty",
+    "pluralName": "entc-visiting-faculties",
+    "displayName": "entc-visiting-faculty"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

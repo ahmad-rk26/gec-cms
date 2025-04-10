@@ -33,6 +33,21 @@
         "videos",
         "audios"
       ]
+    },
+    "attachment": {
+      "type": "text"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
     }
   }
 }

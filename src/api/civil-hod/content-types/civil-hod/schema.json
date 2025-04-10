@@ -33,6 +33,29 @@
     },
     "email": {
       "type": "email"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "designation": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
     }
   }
 }

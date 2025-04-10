@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "science_and_humanities_non_teaching_faculties",
+  "info": {
+    "singularName": "science-and-humanities-non-teaching-faculty",
+    "pluralName": "science-and-humanities-non-teaching-faculties",
+    "displayName": "science-and-humanities-non-teaching-faculty"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
